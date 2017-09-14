@@ -32,4 +32,15 @@ public class ExercicioMatematica {
 		}
 	}
 	
+	public Double media3Numeros (Double valor1, Double valor2, Double valor3){
+		Double media = (valor1 + valor2 + valor3)/3;
+		System.out.println("A média ponderada dos números: " + valor1 + ", " + valor2 + " e " + valor3 + "é: " + media);
+		return media;
+	}
+	
+	public Double areaTriangulo(Double base, Double altura){
+		Double area = base * altura;
+		System.out.println("A area do triangulo retangulo de base: " + base + " e altura " + altura + " é de: " + area);
+		return area;
+	}
 }

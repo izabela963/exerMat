@@ -21,4 +21,14 @@ public class ExercicioMatematicaTest {
 	public void menorValor2Test(){
 		Assert.assertTrue(5d == exercicioMatematica.menorValor2(34d, 45.123, 5.0));
 	}
+	
+	@Test
+	public void media3NumerosTest(){
+		Assert.assertTrue(6d == exercicioMatematica.media3Numeros(1d, 2.5, 14.5));
+	}
+	
+	@Test
+	public void areaTrianguloTest(){
+		Assert.assertTrue(6d == exercicioMatematica.areaTriangulo(3d, 2.0));
+	}
 }
