@@ -4,6 +4,7 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.YearMonth;
 import java.util.Date;
+import java.util.Calendar;
 
 public class ExercicioDatas {
 	
@@ -40,37 +41,39 @@ public class ExercicioDatas {
 	}
 	
 	public Integer idade(Integer dia, Integer mes, Integer ano){
-		Date data = new Date(System.currentTimeMillis());
-		Integer diaAtual = data.getDay();
-		System.out.println(diaAtual);
-		Integer mesAtual = data.getMonth();
-		System.out.println(mesAtual);
-		Integer anoAtual = data.getYear();
-		System.out.println(anoAtual);
-		if ((ano < anoAtual)) {
-			if (mes < mesAtual) {
-					Integer idade = anoAtual - ano;
-					System.out.println(idade);
+			Calendar data = Calendar.getInstance();
+			Integer diaAtual = data.get(Calendar.DAY_OF_MONTH);
+			Integer mesAtual = data.get(Calendar.MONTH) + 1;
+			Integer anoAtual = data.get(Calendar.YEAR);
+			Integer idade = null;
+			
+			if (ano <= anoAtual) {
+				if (mes == mesAtual){
+					if (diaAtual >= dia) {
+						idade = anoAtual - ano;
+						System.out.println("A idade é: " + idade);
+						return idade;
+					} else {
+						idade = anoAtual - ano - 1;
+						System.out.println("A idade é: " + idade);
+						return idade;
+					}
+				} else if (mes > mesAtual) {
+					idade = anoAtual - ano - 1;
+					System.out.println("A idade é: " + idade);
 					return idade;
-			} else if (mes == mesAtual) {
-				if (dia <= diaAtual) {
-					Integer idade = anoAtual - ano;
-					System.out.println(idade);
-					return idade;
-				} else {
-					Integer idade = anoAtual - ano - 1;
-					System.out.println(idade);
+				} else if (mes < mesAtual) {
+					idade = anoAtual - ano;
+					System.out.println("A idade é: " + idade);
 					return idade;
 				}
 			} else {
-				Integer idade = anoAtual - ano - 1;
-				System.out.println(idade);
-				return idade;
+				System.out.println("Data inserida inválida!");
+				return null;
 			}
-		} else {
-			System.out.println("Ano inválido!");
-			return 0;
-		}
+			
+			return 20;
+		
 	}
 	
 }

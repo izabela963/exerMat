@@ -20,6 +20,6 @@ public class ExercicioDatasTeste {
 	
 	@Test
 	public void idadeTest(){
-		Assert.assertTrue(20 == exercicioDatas.idade(30, 04, 1997));
+		Assert.assertTrue(20 == exercicioDatas.idade(15, 9, 1997));
 	}
 }
